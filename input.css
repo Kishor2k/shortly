@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  html {
+    font-family: Poppins, system-ui, sans-serif;
+    font-weight: medium;
+  }
+}
+@layer utilities {
+  ul a:hover {
+    color: hsl(180, 66%, 49%);
+    transition: color 300ms ease;
+  }
+  .boost-link {
+    background: url(../images/bg-boost-mobile.svg), hsl(257, 27%, 26%);
+  }
+  .error {
+    border: 2px solid hsl(0, 87%, 67%);
+  }
+
+  @media (min-width: 700px) {
+    .boost-link {
+      background: url(../images/bg-boost-desktop.svg), hsl(257, 27%, 26%);
+    }
+  }
+}

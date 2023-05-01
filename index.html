@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="./dist/output.css" />
+    <script src="./dist/js/app.js" defer></script>
+
+    <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body class="text-center md:text-left">
+    <main class="overflow-x-hidden">
+      <div
+        class="flex gap-12 justify-between items-center py-8 px-4 font-bold text-grayishViolet container mx-auto relative"
+      >
+        <img src="./images/logo.svg" alt="" class="" />
+        <div
+          class="hidden absolute lg:relative top-20 lg:top-0 lg:flex justify-between items-center gap-12 w-full bg-darkViolet lg:bg-white p-6 lg:p-0 rounded-md"
+          id="menu-items"
+        >
+          <ul
+            role="navigation"
+            class="flex flex-col lg:flex-row lg:justify-between items-center gap-8 mr-auto p-8 lg:p-0"
+            id="main-menu"
+          >
+            <li>
+              <a href="#" class="hover:text-veryDarkViolet transition"
+                >Features</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-veryDarkViolet transition"
+                >Pricing</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-veryDarkViolet transition"
+                >Resources</a
+              >
+            </li>
+          </ul>
+          <div
+            class="flex flex-col lg:flex-row gap-4 border-t p-8 lg:p-0 lg:border-0"
+          >
+            <button class="">Login</button>
+            <button
+              class="bg-cyan-500 text-white font-bold py-3 px-6 rounded-full tracking-wide hover:bg-cyan-700 transition"
+            >
+              Sign Up
+            </button>
+          </div>
+        </div>
+
+        <button class="lg:hidden" id="menu">
+          <ion-icon name="menu-outline" class="text-3xl"></ion-icon>
+        </button>
+      </div>
+      <section id="home ">
+        <div class="container mx-auto p-4 mb-48 md:flex flex-row-reverse">
+          <div class="">
+            <img src="./images/illustration-working.svg" alt="" class="" />
+          </div>
+          <div class="mt-12 mx-auto max-w-sm">
+            <h1
+              class="text-veryDarkViolet text-4xl font-bold md:text-5xl md:leading-[3.5rem]"
+            >
+              More than just shorter links
+            </h1>
+            <p class="text-grayishViolet text-md lg:text-xl mt-3">
+              Build your brand’s recognition and get detailed insights on how
+              your links are performing.
+            </p>
+            <button
+              class="bg-cyan-500 text-white font-bold py-3 px-8 mt-6 rounded-full tracking-wide hover:bg-cyan-700 transition"
+            >
+              Get Started
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="gray" class="bg-gray-200">
+        <div class="container px-4 py-12 relative mx-auto">
+          <!-- Floating form section -->
+          <div
+            class="px-4 absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full"
+          >
+            <div class="boost-link px-4 py-8 rounded-lg">
+              <form id="form" class="flex flex-col md:flex-row gap-5 relative">
+                <div class="grid relative w-full">
+                  <input
+                    type="text"
+                    class="px-2 py-3 rounded-md focus:border-darkViolet w-full"
+                    placeholder="Shorten a link here..."
+                    id="input"
+                  />
+                  <p
+                    class="errMsg text-red italic text-sm absolute -bottom-5 w-full"
+                  ></p>
+                </div>
+
+                <button
+                  type="submit"
+                  class="bg-cyan-500 text-white font-bold px-6 py-3 rounded-md transition min-w-max"
+                >
+                  Shorten It!
+                </button>
+              </form>
+            </div>
+          </div>
+          <!-- output generated by js -->
+          <div class="grid mt-8 gap-4" id="output-container">
+            <!-- <div
+              class="flex flex-col md:flex-row justify-between items-center gap-4 p-4 bg-white md:text-left rounded-md"
+            >
+              <p
+                class="border-b-grayish border-b md:border-0 pb-4 md:pb-0 w-full"
+              >
+                dkfjgndfgjkdfng
+              </p>
+              <div
+                class="flex flex-col md:flex-row justify-end gap-4 items-center w-full"
+              >
+                <a href="#" class="text-cyan-500" id="shortLink">dsfgnkjd</a>
+                <button
+                  class="bg-cyan-500 text-white font-bold px-4 py-2 w-full md:w-auto rounded-md transition"
+                  id="btnCopy"
+                  onclick="urlCopy(event)"
+                >
+                  Copy
+                </button>
+              </div>
+            </div> -->
+          </div>
+          <!-- showcase section -->
+          <div class="mt-12">
+            <div class="max-w-sm text-center mx-auto">
+              <h2 class="text-veryDarkViolet text-xl md:text-2xl font-bold">
+                Advanced Statistics
+              </h2>
+              <p class="text-grayishViolet mt-4">
+                Track how your links are performing across the web with our
+                advanced statistics dashboard.
+              </p>
+            </div>
+            <!-- features section -->
+            <div
+              class="flex flex-col md:flex-row gap-y-8 gap-x-4 mt-16 md:text-left relative"
+            >
+              <!-- cyan line between cards -->
+              <div
+                class="bg-cyan-500 w-2 absolute top-0 left-1/2 -translate-x-1/2 h-full md:w-full md:h-2 md:top-1/2"
+              ></div>
+              <!-- brand card -->
+              <div class="bg-white p-6 rounded-md relative self-start">
+                <div
+                  class="bg-darkViolet absolute w-16 h-16 rounded-full p-4 top-0 left-1/2 -translate-x-1/2 lg:left-4 lg:-translate-x-0 -translate-y-1/2"
+                >
+                  <img src="./images/icon-brand-recognition.svg" alt="" />
+                </div>
+                <h3 class="text-veryDarkViolet font-bold mt-10">
+                  Brand Recognition
+                </h3>
+                <p class="text-grayishViolet text-sm mt-3">
+                  Boost your brand recognition with each click. Generic links
+                  don’t mean a thing. Branded links help instil confidence in
+                  your content
+                </p>
+              </div>
+              <!-- record card -->
+              <div class="bg-white p-6 rounded-md relative self-start mt-8">
+                <div
+                  class="bg-darkViolet absolute w-16 h-16 rounded-full p-4 top-0 left-1/2 -translate-x-1/2 lg:left-4 lg:-translate-x-0 -translate-y-1/2"
+                >
+                  <img src="./images/icon-detailed-records.svg" alt="" />
+                </div>
+                <h3 class="text-veryDarkViolet font-bold mt-10">
+                  Detailed Records
+                </h3>
+                <p class="text-grayishViolet text-sm mt-3">
+                  Gain insights into who is clicking your links. Knowing when
+                  and where people engage with your content helps inform better
+                  decisions.
+                </p>
+              </div>
+              <!-- customizable card -->
+              <div class="bg-white p-6 rounded-md relative self-start mt-16">
+                <div
+                  class="bg-darkViolet absolute w-16 h-16 rounded-full p-4 top-0 left-1/2 -translate-x-1/2 lg:left-4 lg:-translate-x-0 -translate-y-1/2"
+                >
+                  <img src="./images/icon-fully-customizable.svg" alt="" />
+                </div>
+                <h3 class="text-veryDarkViolet font-bold mt-10">
+                  Fully Customizable
+                </h3>
+                <p class="text-grayishViolet text-sm mt-3">
+                  Improve brand awareness and content discoverability through
+                  customizable links, supercharging audience engagement.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="boost-link py-12 text-center">
+        <h1 class="text-white text-2xl xl:text-3xl font-bold">
+          Boost your links today
+        </h1>
+        <button
+          class="bg-cyan-500 text-white font-bold py-3 px-8 mt-6 rounded-full tracking-wide hover:bg-cyan-700 transition"
+        >
+          Get Started
+        </button>
+      </div>
+      <!-- footer -->
+      <section id="footer" class="bg-veryDarkViolet">
+        <div
+          class="container px-4 mx-auto text-grayish py-8 grid grid-cols-1 md:grid-cols-7 gap-9"
+        >
+          <div class="md:col-span-2">
+            <img src="./images/logo-white.svg" alt="" />
+          </div>
+          <div class="space-y-4">
+            <div class="text-white font-bold text-sm">Features</div>
+            <ul class="space-y-1">
+              <li>
+                <a href="#" class="text-sm">Link Shortening</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm">Branded Links</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm">Analytics</a>
+              </li>
+            </ul>
+          </div>
+          <div class="space-y-4">
+            <div class="text-white font-bold text-sm">Resources</div>
+            <ul class="space-y-1">
+              <li>
+                <a href="#" class="text-sm">Blog</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm">Developers</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm">Support</a>
+              </li>
+            </ul>
+          </div>
+          <div class="space-y-4">
+            <div class="text-white font-bold text-sm">Company</div>
+            <ul class="space-y-1">
+              <li>
+                <a href="#" class="text-sm">About</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm">Our Team</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm">Career</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <ul class="flex gap-3 text-white text-xl mx-auto md:col-span-2">
+            <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-pinterest"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <div class="attribution bg-veryDarkViolet text-grayish p-4 text-center">
+      Challenge by
+      <a
+        href="https://www.frontendmentor.io?ref=challenge"
+        class="text-cyan-500"
+        target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a
+        href="https://www.frontendmentor.io/profile/Kishor2k "
+        class="text-cyan-500"
+        >Kishor Karki</a
+      >.
+    </div>
+  </body>
+</html>
